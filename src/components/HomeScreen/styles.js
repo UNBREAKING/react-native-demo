@@ -14,7 +14,8 @@ const styles = StyleSheet.create({
     color: COLORS.white
   },
   buttonContainer: {
-    alignItems: 'center'
+    alignItems: 'center',
+    paddingTop: 20
   },
   navigationButton: {
     backgroundColor: COLORS.white,
