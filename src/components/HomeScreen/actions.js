@@ -8,7 +8,9 @@ export const saveWeightsFromStorage = createAction('WEIGHTS_ARRAY/SAVE_ARRAY_FRO
 export const saveWeight = () => (dispatch, getState) => {
   const { weightFieldReducer: { value } = {} } = getState()
 
-  dispatch(saveValueToArray(value))
+  const newValue = value.replace(',', '.')
+
+  dispatch(saveValueToArray(newValue))
   dispatch(setWeightsToStorage())
   dispatch(setNewValue(''))
 }

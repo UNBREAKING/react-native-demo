@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Text, View, TextInput } from 'react-native';
 import { COLORS, WEIGHT_REG } from '../../constants';
+import { TextInputMask } from 'react-native-masked-text'
 import styles from './styles';
 import HeaderButton from './HeaderButton';
 
@@ -52,11 +53,15 @@ class AddWeightScreen extends Component {
         </Text>
         <View style={styles.fieldWrapper}>
           <View style={styles.fieldRoundWrapper}>
-            <TextInput
+            <TextInputMask
+              type={'custom'}
+              options={{
+                mask: '99,9'
+              }}
               style={styles.field}
               onChangeText={this.onChange}
               value={this.props.value}
-              autoFocus maxLength={4} 
+              autoFocus maxLength={5} 
               keyboardType='numeric' />
             <Text style={styles.kgText}>kg</Text>
           </View>
